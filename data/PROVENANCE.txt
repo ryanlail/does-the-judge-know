@@ -1,0 +1,11 @@
+source_repo = https://github.com/composo-ai/llm-judge-criteria-ensembling
+commit_sha  = e4049a57dc73097f899a605f5435923f03e9233c
+branch      = main
+retrieved   = 2026-06-12T17:17:51Z
+
+file = data/raw/base_both_k8.jsonl  sha256=044274b17ec80786ac1fefe22cda84cdf4c4aae578aa228c9c710f22345cef1c  bytes=1530729
+file = data/raw/base_claude_both_k8.jsonl  sha256=31f2855deb35c094e12ec6dc82d5fcf45f4b9200d95fcda912e7da9a45505058  bytes=1576613
+file = data/raw/base_nano_k8.jsonl  sha256=7e3a45c2511f76dd3fe144884a090c32838f74746953fab43c8d345168bad21e  bytes=845470
+file = data/raw/criteria_both_k8.jsonl  sha256=d738ffcdc648539e3bf994da4875a096ee12fa1ba80d66635a8101b39732ef6a  bytes=1552664
+file = data/raw/criteria_claude_both_k8.jsonl  sha256=a7aee106f012c4de0b43af2cf5d80d80a877335a0d50d8a26ec4c917b7836314  bytes=1574874
+file = data/tables/all_metrics.json  sha256=9e735fb0b92bf92abb60a4d31963d7808a5aea83d9f5717599a8127e32d33358  bytes=16239

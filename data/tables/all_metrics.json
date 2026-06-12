@@ -1,0 +1,654 @@
+{
+  "claude_full_baseline": {
+    "name": "Claude Sonnet 4.6 Baseline k=1",
+    "n": 1698,
+    "accuracy": {
+      "overall": 0.7273262661955241,
+      "n": 1698,
+      "n_correct": 1235,
+      "n_tied": 312,
+      "by_subset": {
+        "Factuality": {
+          "accuracy": 0.7164179104477612,
+          "n": 469,
+          "n_correct": 336,
+          "n_tied": 93
+        },
+        "Focus": {
+          "accuracy": 0.7252066115702479,
+          "n": 484,
+          "n_correct": 351,
+          "n_tied": 88
+        },
+        "Math": {
+          "accuracy": 0.7630057803468208,
+          "n": 173,
+          "n_correct": 132,
+          "n_tied": 25
+        },
+        "Precise IF": {
+          "accuracy": 0.38620689655172413,
+          "n": 145,
+          "n_correct": 56,
+          "n_tied": 58
+        },
+        "Safety": {
+          "accuracy": 0.8430913348946136,
+          "n": 427,
+          "n_correct": 360,
+          "n_tied": 48
+        }
+      }
+    },
+    "accuracy_ci": {
+      "overall": {
+        "mean": 0.7268515716325321,
+        "ci_low": 0.7048617248168848,
+        "ci_high": 0.748901091680707
+      },
+      "by_subset": {
+        "Factuality": {
+          "mean": 0.7167210613690175,
+          "ci_low": 0.6799938748607419,
+          "ci_high": 0.7592083333333333
+        },
+        "Focus": {
+          "mean": 0.7252111974932299,
+          "ci_low": 0.6884052953156823,
+          "ci_high": 0.7636766184628757
+        },
+        "Math": {
+          "mean": 0.7611358851734501,
+          "ci_low": 0.6951176264044944,
+          "ci_high": 0.8204398894518655
+        },
+        "Precise IF": {
+          "mean": 0.3839991630799713,
+          "ci_low": 0.30361414229594064,
+          "ci_high": 0.45709542489838356
+        },
+        "Safety": {
+          "mean": 0.8430148884090185,
+          "ci_low": 0.805198577629999,
+          "ci_high": 0.875141129032258
+        }
+      }
+    },
+    "cost": {
+      "cost_per_example": 0.0
+    }
+  },
+  "claude_full_ensemble_k8": {
+    "name": "Claude Sonnet 4.6 Ensemble k=8",
+    "n": 1705,
+    "accuracy": {
+      "overall": 0.8304985337243401,
+      "n": 1705,
+      "n_correct": 1416,
+      "n_tied": 67,
+      "by_subset": {
+        "Factuality": {
+          "accuracy": 0.847457627118644,
+          "n": 472,
+          "n_correct": 400,
+          "n_tied": 17
+        },
+        "Focus": {
+          "accuracy": 0.8347107438016529,
+          "n": 484,
+          "n_correct": 404,
+          "n_tied": 18
+        },
+        "Math": {
+          "accuracy": 0.8959537572254336,
+          "n": 173,
+          "n_correct": 155,
+          "n_tied": 4
+        },
+        "Precise IF": {
+          "accuracy": 0.5310344827586206,
+          "n": 145,
+          "n_correct": 77,
+          "n_tied": 17
+        },
+        "Safety": {
+          "accuracy": 0.8816705336426914,
+          "n": 431,
+          "n_correct": 380,
+          "n_tied": 11
+        }
+      }
+    },
+    "accuracy_ci": {
+      "overall": {
+        "mean": 0.8298828757403632,
+        "ci_low": 0.8118007378801462,
+        "ci_high": 0.8500378709231273
+      },
+      "by_subset": {
+        "Factuality": {
+          "mean": 0.8470158187214873,
+          "ci_low": 0.8128360807162143,
+          "ci_high": 0.878599827139153
+        },
+        "Focus": {
+          "mean": 0.8351510879402501,
+          "ci_low": 0.7997567496493689,
+          "ci_high": 0.8692871023227111
+        },
+        "Math": {
+          "mean": 0.8948978499723476,
+          "ci_low": 0.8452320136228182,
+          "ci_high": 0.9398281651194944
+        },
+        "Precise IF": {
+          "mean": 0.5287522754133918,
+          "ci_low": 0.4448879551820728,
+          "ci_high": 0.6104722332802547
+        },
+        "Safety": {
+          "mean": 0.8809840823184304,
+          "ci_low": 0.8482142857142857,
+          "ci_high": 0.9108585066449177
+        }
+      }
+    },
+    "cost": {
+      "cost_per_example": 0.0
+    }
+  },
+  "claude_diminishing_returns_full": {
+    "1": 0.7273262661955241,
+    "2": 0.7723529411764706,
+    "3": 0.7954144620811288,
+    "4": 0.8115091015854374,
+    "5": 0.819941348973607,
+    "6": 0.8240469208211144,
+    "7": 0.8281524926686217,
+    "8": 0.8304985337243401
+  },
+  "claude_mini_baseline": {
+    "name": "Claude Haiku 4.5 Baseline k=1",
+    "n": 1701,
+    "accuracy": {
+      "overall": 0.7272192827748384,
+      "n": 1701,
+      "n_correct": 1237,
+      "n_tied": 307,
+      "by_subset": {
+        "Factuality": {
+          "accuracy": 0.6710239651416122,
+          "n": 459,
+          "n_correct": 308,
+          "n_tied": 100
+        },
+        "Focus": {
+          "accuracy": 0.6784968684759917,
+          "n": 479,
+          "n_correct": 325,
+          "n_tied": 105
+        },
+        "Math": {
+          "accuracy": 0.815028901734104,
+          "n": 173,
+          "n_correct": 141,
+          "n_tied": 17
+        },
+        "Precise IF": {
+          "accuracy": 0.5266666666666666,
+          "n": 150,
+          "n_correct": 79,
+          "n_tied": 42
+        },
+        "Safety": {
+          "accuracy": 0.8727272727272727,
+          "n": 440,
+          "n_correct": 384,
+          "n_tied": 43
+        }
+      }
+    },
+    "accuracy_ci": {
+      "overall": {
+        "mean": 0.7271715351937326,
+        "ci_low": 0.7049003516998827,
+        "ci_high": 0.7477879744753635
+      },
+      "by_subset": {
+        "Factuality": {
+          "mean": 0.6713398424066146,
+          "ci_low": 0.6295888160843298,
+          "ci_high": 0.7173153787590407
+        },
+        "Focus": {
+          "mean": 0.6789696582134278,
+          "ci_low": 0.6377872665958908,
+          "ci_high": 0.7192618999177334
+        },
+        "Math": {
+          "mean": 0.8144096302422162,
+          "ci_low": 0.7506283068783068,
+          "ci_high": 0.8671231484826589
+        },
+        "Precise IF": {
+          "mean": 0.525615227665419,
+          "ci_low": 0.44298309604065,
+          "ci_high": 0.6050082781456952
+        },
+        "Safety": {
+          "mean": 0.8725875055840383,
+          "ci_low": 0.8386523134606702,
+          "ci_high": 0.8992602739726027
+        }
+      }
+    },
+    "cost": {
+      "cost_per_example": 0.0
+    }
+  },
+  "claude_mini_ensemble_k8": {
+    "name": "Claude Haiku 4.5 Ensemble k=8",
+    "n": 1721,
+    "accuracy": {
+      "overall": 0.8506682161533992,
+      "n": 1721,
+      "n_correct": 1464,
+      "n_tied": 43,
+      "by_subset": {
+        "Factuality": {
+          "accuracy": 0.8248945147679325,
+          "n": 474,
+          "n_correct": 391,
+          "n_tied": 16
+        },
+        "Focus": {
+          "accuracy": 0.8305785123966942,
+          "n": 484,
+          "n_correct": 402,
+          "n_tied": 15
+        },
+        "Math": {
+          "accuracy": 0.9075144508670521,
+          "n": 173,
+          "n_correct": 157,
+          "n_tied": 1
+        },
+        "Precise IF": {
+          "accuracy": 0.6533333333333333,
+          "n": 150,
+          "n_correct": 98,
+          "n_tied": 7
+        },
+        "Safety": {
+          "accuracy": 0.9454545454545454,
+          "n": 440,
+          "n_correct": 416,
+          "n_tied": 4
+        }
+      }
+    },
+    "accuracy_ci": {
+      "overall": {
+        "mean": 0.8502321950476076,
+        "ci_low": 0.832931435212086,
+        "ci_high": 0.867599618653599
+      },
+      "by_subset": {
+        "Factuality": {
+          "mean": 0.8240807547434176,
+          "ci_low": 0.7925868811482019,
+          "ci_high": 0.8577501445922499
+        },
+        "Focus": {
+          "mean": 0.8312898116702838,
+          "ci_low": 0.7997852760736197,
+          "ci_high": 0.8628714062312042
+        },
+        "Math": {
+          "mean": 0.9061935160278678,
+          "ci_low": 0.8636198512585812,
+          "ci_high": 0.9453853046594982
+        },
+        "Precise IF": {
+          "mean": 0.6508523331539855,
+          "ci_low": 0.5632981090100111,
+          "ci_high": 0.7291028225806451
+        },
+        "Safety": {
+          "mean": 0.9454923650274227,
+          "ci_low": 0.924583010294181,
+          "ci_high": 0.9657162001191185
+        }
+      }
+    },
+    "cost": {
+      "cost_per_example": 0.0
+    }
+  },
+  "claude_diminishing_returns_mini": {
+    "1": 0.7272192827748384,
+    "2": 0.7929028504944735,
+    "3": 0.8111563044741429,
+    "4": 0.8245206275421266,
+    "5": 0.832074375363161,
+    "6": 0.8332364904125509,
+    "7": 0.8431144683323649,
+    "8": 0.8506682161533992
+  },
+  "claude_full_criteria": {
+    "name": "Claude Sonnet 4.6 Criteria k=1",
+    "n": 1704,
+    "accuracy": {
+      "overall": 0.7411971830985915,
+      "n": 1704,
+      "n_correct": 1263,
+      "n_tied": 317,
+      "by_subset": {
+        "Factuality": {
+          "accuracy": 0.7568710359408034,
+          "n": 473,
+          "n_correct": 358,
+          "n_tied": 89
+        },
+        "Focus": {
+          "accuracy": 0.7458677685950413,
+          "n": 484,
+          "n_correct": 361,
+          "n_tied": 89
+        },
+        "Math": {
+          "accuracy": 0.6820809248554913,
+          "n": 173,
+          "n_correct": 118,
+          "n_tied": 34
+        },
+        "Precise IF": {
+          "accuracy": 0.4413793103448276,
+          "n": 145,
+          "n_correct": 64,
+          "n_tied": 57
+        },
+        "Safety": {
+          "accuracy": 0.8438228438228438,
+          "n": 429,
+          "n_correct": 362,
+          "n_tied": 48
+        }
+      }
+    },
+    "accuracy_ci": {
+      "overall": {
+        "mean": 0.7411577194073405,
+        "ci_low": 0.7204518084700889,
+        "ci_high": 0.7618235725375194
+      },
+      "by_subset": {
+        "Factuality": {
+          "mean": 0.7565961322657005,
+          "ci_low": 0.720393875192604,
+          "ci_high": 0.7929872659346667
+        },
+        "Focus": {
+          "mean": 0.7460295540232348,
+          "ci_low": 0.7087382024103384,
+          "ci_high": 0.7835239648913193
+        },
+        "Math": {
+          "mean": 0.6841312246099562,
+          "ci_low": 0.6104700854700855,
+          "ci_high": 0.7530510932619366
+        },
+        "Precise IF": {
+          "mean": 0.44193277305960194,
+          "ci_low": 0.3602096803569802,
+          "ci_high": 0.5273584905660377
+        },
+        "Safety": {
+          "mean": 0.8431377159597803,
+          "ci_low": 0.8064458213355272,
+          "ci_high": 0.8753088245157278
+        }
+      }
+    },
+    "cost": {
+      "cost_per_example": 0.0
+    }
+  },
+  "claude_full_criteria_k8": {
+    "name": "Claude Sonnet 4.6 Criteria k=8",
+    "n": 1712,
+    "accuracy": {
+      "overall": 0.8352803738317757,
+      "n": 1712,
+      "n_correct": 1430,
+      "n_tied": 79,
+      "by_subset": {
+        "Factuality": {
+          "accuracy": 0.8710359408033826,
+          "n": 473,
+          "n_correct": 412,
+          "n_tied": 18
+        },
+        "Focus": {
+          "accuracy": 0.8309278350515464,
+          "n": 485,
+          "n_correct": 403,
+          "n_tied": 28
+        },
+        "Math": {
+          "accuracy": 0.7514450867052023,
+          "n": 173,
+          "n_correct": 130,
+          "n_tied": 11
+        },
+        "Precise IF": {
+          "accuracy": 0.589041095890411,
+          "n": 146,
+          "n_correct": 86,
+          "n_tied": 13
+        },
+        "Safety": {
+          "accuracy": 0.9172413793103448,
+          "n": 435,
+          "n_correct": 399,
+          "n_tied": 9
+        }
+      }
+    },
+    "accuracy_ci": {
+      "overall": {
+        "mean": 0.8348425250125034,
+        "ci_low": 0.8170346771886324,
+        "ci_high": 0.852020604946114
+      },
+      "by_subset": {
+        "Factuality": {
+          "mean": 0.870314111629603,
+          "ci_low": 0.8398949910287801,
+          "ci_high": 0.9003164515105021
+        },
+        "Focus": {
+          "mean": 0.8306691071394903,
+          "ci_low": 0.797850836963999,
+          "ci_high": 0.8626543490693563
+        },
+        "Math": {
+          "mean": 0.752883443224757,
+          "ci_low": 0.6862833533085221,
+          "ci_high": 0.8156024939983995
+        },
+        "Precise IF": {
+          "mean": 0.5874873025300491,
+          "ci_low": 0.4999424128995105,
+          "ci_high": 0.6701798756415317
+        },
+        "Safety": {
+          "mean": 0.9168113544868308,
+          "ci_low": 0.8900279218189071,
+          "ci_high": 0.941584314384432
+        }
+      }
+    },
+    "cost": {
+      "cost_per_example": 0.0
+    }
+  },
+  "claude_mini_criteria": {
+    "name": "Claude Haiku 4.5 Criteria k=1",
+    "n": 1723,
+    "accuracy": {
+      "overall": 0.7504352872896112,
+      "n": 1723,
+      "n_correct": 1293,
+      "n_tied": 291,
+      "by_subset": {
+        "Factuality": {
+          "accuracy": 0.7178947368421053,
+          "n": 475,
+          "n_correct": 341,
+          "n_tied": 91
+        },
+        "Focus": {
+          "accuracy": 0.7072164948453609,
+          "n": 485,
+          "n_correct": 343,
+          "n_tied": 92
+        },
+        "Math": {
+          "accuracy": 0.8497109826589595,
+          "n": 173,
+          "n_correct": 147,
+          "n_tied": 16
+        },
+        "Precise IF": {
+          "accuracy": 0.54,
+          "n": 150,
+          "n_correct": 81,
+          "n_tied": 46
+        },
+        "Safety": {
+          "accuracy": 0.865909090909091,
+          "n": 440,
+          "n_correct": 381,
+          "n_tied": 46
+        }
+      }
+    },
+    "accuracy_ci": {
+      "overall": {
+        "mean": 0.7503017991874638,
+        "ci_low": 0.7301218804410912,
+        "ci_high": 0.7681514799767847
+      },
+      "by_subset": {
+        "Factuality": {
+          "mean": 0.7175345848694139,
+          "ci_low": 0.6767832674913008,
+          "ci_high": 0.7603517803807261
+        },
+        "Focus": {
+          "mean": 0.7077285747469512,
+          "ci_low": 0.669675985778927,
+          "ci_high": 0.7453815440351056
+        },
+        "Math": {
+          "mean": 0.8502817540955954,
+          "ci_low": 0.7975830461981066,
+          "ci_high": 0.8984384755286517
+        },
+        "Precise IF": {
+          "mean": 0.5377167038836719,
+          "ci_low": 0.4617521367521368,
+          "ci_high": 0.6173498122653317
+        },
+        "Safety": {
+          "mean": 0.8660296394412094,
+          "ci_low": 0.8317672058253169,
+          "ci_high": 0.8949214249135834
+        }
+      }
+    },
+    "cost": {
+      "cost_per_example": 0.0
+    }
+  },
+  "claude_mini_criteria_k8": {
+    "name": "Claude Haiku 4.5 Criteria k=8",
+    "n": 1723,
+    "accuracy": {
+      "overall": 0.8601276842716192,
+      "n": 1723,
+      "n_correct": 1482,
+      "n_tied": 43,
+      "by_subset": {
+        "Factuality": {
+          "accuracy": 0.8610526315789474,
+          "n": 475,
+          "n_correct": 409,
+          "n_tied": 10
+        },
+        "Focus": {
+          "accuracy": 0.822680412371134,
+          "n": 485,
+          "n_correct": 399,
+          "n_tied": 17
+        },
+        "Math": {
+          "accuracy": 0.9017341040462428,
+          "n": 173,
+          "n_correct": 156,
+          "n_tied": 4
+        },
+        "Precise IF": {
+          "accuracy": 0.6933333333333334,
+          "n": 150,
+          "n_correct": 104,
+          "n_tied": 8
+        },
+        "Safety": {
+          "accuracy": 0.9409090909090909,
+          "n": 440,
+          "n_correct": 414,
+          "n_tied": 4
+        }
+      }
+    },
+    "accuracy_ci": {
+      "overall": {
+        "mean": 0.86003714451538,
+        "ci_low": 0.8432965757399884,
+        "ci_high": 0.8763784097504352
+      },
+      "by_subset": {
+        "Factuality": {
+          "mean": 0.8611094982874353,
+          "ci_low": 0.8288690314520072,
+          "ci_high": 0.89275
+        },
+        "Focus": {
+          "mean": 0.8229236575951351,
+          "ci_low": 0.7902150072559335,
+          "ci_high": 0.8518760135468091
+        },
+        "Math": {
+          "mean": 0.9013634647614588,
+          "ci_low": 0.8533691608102522,
+          "ci_high": 0.9433627608346709
+        },
+        "Precise IF": {
+          "mean": 0.6907531529706396,
+          "ci_low": 0.6184582542694498,
+          "ci_high": 0.767016331220837
+        },
+        "Safety": {
+          "mean": 0.9415000854519444,
+          "ci_low": 0.9192216467587409,
+          "ci_high": 0.9611331185065837
+        }
+      }
+    },
+    "cost": {
+      "cost_per_example": 0.0
+    }
+  }
+}
