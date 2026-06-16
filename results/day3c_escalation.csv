@@ -1,0 +1,53 @@
+pair,section,key,budget,value
+GPT-5.4 → GPT-5.4-mini,overlap,n_bias,,165.0
+GPT-5.4 → GPT-5.4-mini,overlap,p_mini_given_full_bias,,0.7090909090909091
+GPT-5.4 → GPT-5.4-mini,overlap,mini_err_overall,,0.2083089526038619
+GPT-5.4 → GPT-5.4-mini,overlap,diff_adj_baseline,,0.40490751459911734
+GPT-5.4 → GPT-5.4-mini,overlap,excess,,0.30418339449179177
+GPT-5.4 → GPT-5.4-mini,overlap,mh_or,,8.198789532972201
+GPT-5.4 → GPT-5.4-mini,overlap,mh_lo,,5.964719704408068
+GPT-5.4 → GPT-5.4-mini,overlap,mh_hi,,11.269624246768418
+GPT-5.4 → GPT-5.4-mini,recall_auc,bias_by_var,,0.6099505416862929
+GPT-5.4 → GPT-5.4-mini,recall_auc,bias_by_instab,,0.7032775945988381
+GPT-5.4 → GPT-5.4-mini,recall_auc,varerr_by_var,,0.5924370460870156
+GPT-5.4 → GPT-5.4-mini,recall,bias_by_var,0.05,0.09696969696969697
+GPT-5.4 → GPT-5.4-mini,recall,bias_by_var,0.1,0.20606060606060606
+GPT-5.4 → GPT-5.4-mini,recall,bias_by_var,0.2,0.3575757575757576
+GPT-5.4 → GPT-5.4-mini,recall,bias_by_var,0.3,0.44242424242424244
+GPT-5.4 → GPT-5.4-mini,recall,bias_by_var,0.5,0.6363636363636364
+GPT-5.4 → GPT-5.4-mini,recall,bias_by_instab,0.05,0.10909090909090909
+GPT-5.4 → GPT-5.4-mini,recall,bias_by_instab,0.1,0.24848484848484848
+GPT-5.4 → GPT-5.4-mini,recall,bias_by_instab,0.2,0.45454545454545453
+GPT-5.4 → GPT-5.4-mini,recall,bias_by_instab,0.3,0.6242424242424243
+GPT-5.4 → GPT-5.4-mini,recall,bias_by_instab,0.5,0.7878787878787878
+GPT-5.4 → GPT-5.4-mini,recall,varerr_by_var,0.05,0.125
+GPT-5.4 → GPT-5.4-mini,recall,varerr_by_var,0.1,0.2222222222222222
+GPT-5.4 → GPT-5.4-mini,recall,varerr_by_var,0.2,0.3472222222222222
+GPT-5.4 → GPT-5.4-mini,recall,varerr_by_var,0.3,0.4583333333333333
+GPT-5.4 → GPT-5.4-mini,recall,varerr_by_var,0.5,0.6111111111111112
+Sonnet 4.6 → Haiku 4.5,overlap,n_bias,,130.0
+Sonnet 4.6 → Haiku 4.5,overlap,p_mini_given_full_bias,,0.5769230769230769
+Sonnet 4.6 → Haiku 4.5,overlap,mini_err_overall,,0.14745465184318315
+Sonnet 4.6 → Haiku 4.5,overlap,diff_adj_baseline,,0.31602649878077005
+Sonnet 4.6 → Haiku 4.5,overlap,excess,,0.2608965781423068
+Sonnet 4.6 → Haiku 4.5,overlap,mh_or,,5.887973033210943
+Sonnet 4.6 → Haiku 4.5,overlap,mh_lo,,4.194805512916525
+Sonnet 4.6 → Haiku 4.5,overlap,mh_hi,,8.26456109420803
+Sonnet 4.6 → Haiku 4.5,recall_auc,bias_by_var,,0.6644516977639208
+Sonnet 4.6 → Haiku 4.5,recall_auc,bias_by_instab,,0.7445121060067228
+Sonnet 4.6 → Haiku 4.5,recall_auc,varerr_by_var,,0.6006326224483141
+Sonnet 4.6 → Haiku 4.5,recall,bias_by_var,0.05,0.1
+Sonnet 4.6 → Haiku 4.5,recall,bias_by_var,0.1,0.19230769230769232
+Sonnet 4.6 → Haiku 4.5,recall,bias_by_var,0.2,0.36153846153846153
+Sonnet 4.6 → Haiku 4.5,recall,bias_by_var,0.3,0.5
+Sonnet 4.6 → Haiku 4.5,recall,bias_by_var,0.5,0.7307692307692307
+Sonnet 4.6 → Haiku 4.5,recall,bias_by_instab,0.05,0.13846153846153847
+Sonnet 4.6 → Haiku 4.5,recall,bias_by_instab,0.1,0.26153846153846155
+Sonnet 4.6 → Haiku 4.5,recall,bias_by_instab,0.2,0.5307692307692308
+Sonnet 4.6 → Haiku 4.5,recall,bias_by_instab,0.3,0.6923076923076923
+Sonnet 4.6 → Haiku 4.5,recall,bias_by_instab,0.5,0.8538461538461538
+Sonnet 4.6 → Haiku 4.5,recall,varerr_by_var,0.05,0.042105263157894736
+Sonnet 4.6 → Haiku 4.5,recall,varerr_by_var,0.1,0.1368421052631579
+Sonnet 4.6 → Haiku 4.5,recall,varerr_by_var,0.2,0.29473684210526313
+Sonnet 4.6 → Haiku 4.5,recall,varerr_by_var,0.3,0.45263157894736844
+Sonnet 4.6 → Haiku 4.5,recall,varerr_by_var,0.5,0.6421052631578947
