@@ -129,14 +129,13 @@ def make_fig1(bias_df: pd.DataFrame) -> pd.DataFrame:
         bars[si].set_edgecolor("black")
         bars[si].set_linewidth(2.2)
 
-    ax.axhline(0.25, ls="--", lw=1, color="#888")
-    ax.text(len(cats) - 0.5, 0.255, "alive threshold (25%)", ha="right", va="bottom",
-            fontsize=8, color="#666")
+    ax.axhline(0.25, ls="--", lw=1.4, color="#333", zorder=5)
+    ax.text(len(cats) - 0.5, 0.265, "25%", ha="right", va="bottom", fontsize=9, color="#333")
     ax.set_xticks(x)
     ax.set_xticklabels(cats)
-    ax.set_ylabel(f"bias share  (f_same ≥ {PRIMARY_THR})")
+    ax.set_ylabel(r"Bias share  ($f_\mathrm{same} \geq 0.9$)")
     ax.set_ylim(0, 1)
-    ax.set_title("Fraction of judge errors that are bias errors, by RewardBench-2 category")
+    ax.set_title("Fraction of judge errors that are bias errors, by RewardBench 2 category")
     ax.legend(frameon=False)
     fig.tight_layout()
     FIGURES.mkdir(exist_ok=True)

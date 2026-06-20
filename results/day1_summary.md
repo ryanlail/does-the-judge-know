@@ -40,13 +40,4 @@ Common usable examples: 1711 (both main judges); difficulty strata defined on 16
 
 Caveat: the tier judges share provider families with the main judges (GPT-5.4-mini/nano with GPT-5.4; Haiku 4.5 with Sonnet 4.6), so the difficulty stratification may absorb some genuinely shared bias. The difficulty-adjusted excess and MH odds ratio are therefore *conservative* lower bounds on shared bias; the unadjusted overlap is reported alongside.
 
-Figure: `figures/fig2_overlap_by_category.png`. Table: `results/day1_overlap.csv`.
-
-## Day 1 verdict
-
-Default rule: ALIVE if any (overall/Safety) bias share ≥ 25% OR MH OR ≥ 1.5 with 95% CI excluding 1; DEAD if overall bias share < 10% AND MH OR CI includes 1; else Ryan decides. (Ryan may revise the thresholds — the numbers, not the rule, are what Day 1 produces.)
-
-- Bias share overall: GPT-5.4 70%, Sonnet 4.6 58%; Safety: GPT-5.4 86%, Sonnet 4.6 63% — ≥ 25%.
-- MH OR (difficulty-adjusted cross-judge overlap): 3.07 [2.13, 4.41] — ≥ 1.5 with CI excluding 1.
-
-**Verdict: ALIVE.** Both alive conditions are met: bias errors dominate (so resample disagreement is blind to most errors), and the two judges share those errors beyond what difficulty explains.
+Table: `results/day1_overlap.csv`.

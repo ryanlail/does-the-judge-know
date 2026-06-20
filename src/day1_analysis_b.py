@@ -12,7 +12,6 @@ count as errors, matching the paper).
 
 Outputs:
     results/day1_overlap.csv        per category: observed/expected/excess, MH OR + CI
-    figures/fig2_overlap_by_category.png  (+ .csv)
     results/day1_summary.md         Analysis B section (appended)
 
 Run:  uv run python -m src.day1_analysis_b   (after src.day1_analysis_a)
@@ -27,7 +26,6 @@ from src import winners as W
 from src.data_loader import REPO_ROOT, SEED, SUBSETS, load_long
 
 RESULTS = REPO_ROOT / "results"
-FIGURES = REPO_ROOT / "figures"
 
 MAIN = [("gpt-5.4", "E_g"), ("claude-sonnet-4-6", "E_c")]
 TIERS = [("gpt-5.4-mini", "E_mini"), ("claude-haiku-4-5-20251001", "E_haiku"), ("gpt-5.4-nano", "E_nano")]
@@ -203,42 +201,6 @@ def build_overlap_table(df):
     return pd.DataFrame(rows)
 
 
-def make_fig2(tbl):
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
-
-    cats = list(CATS)
-    d = tbl.set_index("category").reindex(cats)
-    x = np.arange(len(cats))
-    adj = d["excess_adjusted"].to_numpy() * 100
-    lo = adj - d["excess_adj_ci_lo"].to_numpy() * 100
-    hi = d["excess_adj_ci_hi"].to_numpy() * 100
-    unadj = d["excess_unadjusted"].to_numpy() * 100
-
-    fig, ax = plt.subplots(figsize=(9, 4.6), dpi=200)
-    bars = ax.bar(x, adj, 0.6, yerr=[lo, hi], capsize=3, color="#3b6fb6",
-                  ecolor="#444", error_kw={"lw": 1}, label="difficulty-adjusted excess")
-    ax.scatter(x, unadj, color="#c1543f", zorder=5, label="unadjusted excess", marker="D", s=28)
-    si = cats.index("Safety")
-    bars[si].set_edgecolor("black")
-    bars[si].set_linewidth(2.2)
-    ax.axhline(0, lw=1, color="#333")
-    ax.set_xticks(x)
-    ax.set_xticklabels(cats)
-    ax.set_ylabel("excess joint-error rate (percentage points)")
-    ax.set_title("Cross-judge error overlap beyond chance (GPT-5.4 ∩ Sonnet 4.6)")
-    ax.legend(frameon=False)
-    fig.tight_layout()
-    FIGURES.mkdir(exist_ok=True)
-    fig.savefig(FIGURES / "fig2_overlap_by_category.png")
-    plt.close(fig)
-    behind = d.reset_index()[["category", "n", "P_joint", "expected_strata",
-                              "excess_adjusted", "excess_adj_ci_lo", "excess_adj_ci_hi",
-                              "excess_unadjusted", "MH_OR", "MH_OR_ci_lo", "MH_OR_ci_hi"]]
-    behind.to_csv(FIGURES / "fig2_overlap_by_category.csv", index=False)
-
-
 def _pp(x):
     return f"{100*x:+.1f}pp"
 
@@ -281,7 +243,7 @@ def md_section(tbl, perm_strat, perm_cat, n_full, n_strata):
     L.append("")
     L.append(CAVEAT)
     L.append("")
-    L.append("Figure: `figures/fig2_overlap_by_category.png`. Table: `results/day1_overlap.csv`.")
+    L.append("Table: `results/day1_overlap.csv`.")
     L.append("")
     return "\n".join(L)
 
@@ -303,7 +265,6 @@ def main():
     df, tbl, perm_strat, perm_cat, n_full = run(long)
     RESULTS.mkdir(exist_ok=True)
     tbl.to_csv(RESULTS / "day1_overlap.csv", index=False)
-    make_fig2(tbl)
 
     section = md_section(tbl, perm_strat, perm_cat, n_full, len(df))
     path = RESULTS / "day1_summary.md"

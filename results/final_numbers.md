@@ -1,8 +1,8 @@
-# Final numbers — reference for the writeup
+# Numbers behind the post
 
-Every number for the post, with 95% CIs and its source file. Nothing here is prose for the post; it is the lookup table to write from.
+Every quantity cited in the post, with its 95% CI and the file that produces it — a reference for checking the claims against the code.
 
-**Regenerate:** `uv run python -m src.day1 && uv run python -m src.day3_robustness && uv run python -m src.day3c_escalation && uv run python -m src.day3d_cross_family`; figures at 2× via `uv run python -m src.export_figures`.
+**Regenerate:** `uv run python -m src.day1_analysis_a && uv run python -m src.day1_analysis_b && uv run python -m src.day3_robustness && uv run python -m src.day3c_escalation && uv run python -m src.day3d_cross_family`; figures via `uv run python -m src.export_figures`.
 
 **Setup:** data = `composo-ai/llm-judge-criteria-ensembling` @ `e4049a5` (vendored read-only); RewardBench-2, base prompt, k=8. *Bias error* = non-tie error reproduced under resampling (winner stability `f_same ≥ 0.9`, B=1000 per example). *Recall ceiling* = 1 − bias share. CIs are 95% bootstrap over examples (B=2000) unless noted.
 
@@ -36,7 +36,7 @@ Error / tie rates: GPT-5.4 14.0% / 4.5% (acc 81.5%); Sonnet 4.6 13.2% / 4.0% (ac
 
 ---
 
-## 2. HEADLINE B — cross-judge error overlap — fig2; `day1_overlap.csv`
+## 2. HEADLINE B — cross-judge error overlap — fig2_cross_judge_overlap + fig_family_overlap; `day1_overlap.csv`
 | Quantity | Overall [95% CI] | Safety [95% CI] |
 |---|---|---|
 | P(GPT err) / P(Sonnet err) / P(both) | 18.2% / 17.3% / 9.7% | 7.6% / 11.5% / 2.8% |
@@ -46,6 +46,8 @@ Error / tie rates: GPT-5.4 14.0% / 4.5% (acc 81.5%); Sonnet 4.6 13.2% / 4.0% (ac
 
 Negative control: within-stratum permutation excess ≈ **0.0pp** [−0.5, +0.5] (estimator unbiased); within-category +0.4pp (structural, explained); observed +1.9pp, p < 0.001 — `day1_summary.md`.
 Per-category MH OR: Factuality 4.71 · Focus 2.36 · Math 4.77 · Precise IF 3.06 · **Safety 1.31 (n.s.)** — `day1_overlap.csv`.
+
+**Same-family vs cross-provider overlap** (post family figure, `post_fig_family.py`): difficulty-adjusted overlap ratio (observed both-wrong ÷ difficulty-matched expectation; difficulty from the judges outside each pair) — cross-provider GPT-5.4 ∩ Sonnet 4.6 **1.24×** (+1.9pp); same-family GPT-5.4 ∩ GPT-5.4-mini **1.68×** (+5.0pp); same-family Sonnet 4.6 ∩ Haiku 4.5 **1.56×** (+3.2pp). Same-family judges overlap far more once difficulty is controlled, corroborating the cross-tier MH OR in §5C with a second method.
 
 ---
 
@@ -68,7 +70,7 @@ Anchor: the published "variance predicts incorrectness" AUC ≈ 0.60 reproduced 
 
 ---
 
-## 5. Follow-ups — escalation (Analyses C, D) — fig_escalation_recall.png, fig_escalation_family.png
+## 5. Follow-ups — escalation (Analyses C, D) — supplementary figs (not shown in the post)
 
 **C — cheap-monitor + escalation** (`day3c_escalation.csv`):
 | Tier pair | P(mini wrong \| full bias) | diff-adj baseline | cross-tier MH OR | escalation recall @20% (var / instab) |
@@ -95,13 +97,17 @@ Cross-family is **not a robust win** (backstop-specific; the mirror reverses). O
 
 ---
 
-## Figures (re-exported at 2×, savefig dpi 400)
-| File | Role | Backing numbers |
+## Figures
+
+The three post figures are re-exported at 2× (savefig dpi 400) by `src.export_figures`; the two supplementary escalation figures render at default dpi from their analysis scripts.
+
+| File | In post? | Source |
 |---|---|---|
-| **fig1_bias_share_by_category.png** | HEADLINE | fig1_bias_share_by_category.csv |
-| fig2_overlap_by_category.png | headline 2 | fig2_overlap_by_category.csv |
-| fig_escalation_recall.png | follow-up (C) | day3c_escalation.csv |
-| fig_escalation_family.png | follow-up (D) | day3d_escalation_family.csv |
+| **fig1_bias_share_by_category.png** | yes (headline) | `day1_analysis_a.make_fig1`, fig1_bias_share_by_category.csv |
+| **fig2_cross_judge_overlap.png** | yes | `post_fig_overlap.py`, day1_overlap.csv |
+| **fig_family_overlap.png** | yes | `post_fig_family.py` |
+| fig_escalation_recall.png | supplementary (C) | `day3c_escalation.make_fig`, day3c_escalation.csv |
+| fig_escalation_family.png | supplementary (D) | `day3d_cross_family.make_fig`, day3d_escalation_family.csv |
 
 ## Source files (all under `results/`)
 step0_inventory.csv · step0_summary.md · day1_bias_share.csv · day1_auc.csv · day1_overlap.csv · day1_summary.md · day3_robustness.csv · day3c_escalation.csv · day3d_escalation_family.csv · day3_summary.md

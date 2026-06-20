@@ -49,9 +49,9 @@ BUDGETS = [0.05, 0.10, 0.20, 0.30, 0.50]
 JUDGES = {"gpt-5.4": "gf", "gpt-5.4-mini": "gm",
           "claude-sonnet-4-6": "sf", "claude-haiku-4-5-20251001": "hk"}
 PAIRS = [
-    {"name": "GPT-5.4 → GPT-5.4-mini", "full": "gf", "mini": "gm",
+    {"name": "GPT-5.4-mini → GPT-5.4", "full": "gf", "mini": "gm",
      "q": "q_gpt_pair", "proxy": "Sonnet 4.6 score-margin"},
-    {"name": "Sonnet 4.6 → Haiku 4.5", "full": "sf", "mini": "hk",
+    {"name": "Haiku 4.5 → Sonnet 4.6", "full": "sf", "mini": "hk",
      "q": "q_sonnet_pair", "proxy": "GPT-5.4 score-margin"},
 ]
 
@@ -165,18 +165,16 @@ def make_fig(results):
     for ax, (pair, fine, curves, aucs, *_rest) in zip(axes, results):
         x = fine * 100
         ax.plot(x, curves["bias_by_var"] * 100, color="#3b6fb6", lw=2,
-                label=f"full BIAS errors, by mini variance (AUC {aucs['bias_by_var']:.2f})")
+                label=f"Cheap trigger: monitor variance (AUC {aucs['bias_by_var']:.2f})")
         ax.plot(x, curves["bias_by_instab"] * 100, color="#3b6fb6", lw=1.6, ls="--",
-                label=f"full BIAS errors, by mini 1−f_same (AUC {aucs['bias_by_instab']:.2f})")
-        ax.plot(x, curves["varerr_by_var"] * 100, color="#c1543f", lw=1.6, ls=":",
-                label=f"full VARIANCE errors, by mini variance (AUC {aucs['varerr_by_var']:.2f})")
-        ax.plot(x, x, color="#888", lw=1, label="random (no skill)")
+                label=f"Costlier trigger: monitor instability (AUC {aucs['bias_by_instab']:.2f})")
+        ax.plot(x, x, color="#888", lw=1, label="Random (no skill)")
         ax.set_title(pair["name"])
-        ax.set_xlabel("escalation budget (% escalated)")
+        ax.set_xlabel("Escalation budget (% escalated)")
         ax.legend(frameon=False, fontsize=7.5, loc="lower right")
         ax.set_xlim(0, 100)
         ax.set_ylim(0, 100)
-    axes[0].set_ylabel("recall of the full judge's errors (%)")
+    axes[0].set_ylabel("Recall of the frontier judge's bias errors (%)")
     fig.suptitle("Cheap-monitor escalation recalls only a minority of the frontier judge's bias errors")
     fig.tight_layout()
     FIGURES.mkdir(exist_ok=True)
