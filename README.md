@@ -4,7 +4,7 @@
 of LLM-judge error structure on RewardBench 2, and what it means for using
 disagreement (resampling one judge, or polling a panel) as an error detector.
 
-The writeup is in [`post.md`](post.md).
+The writeup is in [`post/post.md`](post/post.md) (self-contained with its figures).
 
 ---
 
@@ -63,7 +63,7 @@ results/         CSVs + markdown summaries; final_numbers.md indexes every post 
 figures/         the 3 post figures (+ 2 supplementary escalation figures)
 tests/           loader + winner/paper-parity tests
 scripts/         fetch_data.sh — (re)vendor the pinned data snapshot
-post.md          the writeup
+post/            the writeup + the three figures it embeds (self-contained)
 ```
 
 ## Reproduce
